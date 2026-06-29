@@ -7,7 +7,6 @@ Dim swApp As Object
 Dim Part As Object
 Dim boolstatus As Boolean
 Dim longstatus As Long, longwarnings As Long
-Const m2i As Double = 0.0254
 Dim myGearbox As New Gearbox
 
 Sub main()
@@ -40,7 +39,7 @@ Sub main()
     gf.Show
     'when they click OK, it continues here
     If gf.myGearbox Is Nothing Then Exit Sub 'the user might have closed the dialog instead of OK
-
+    Set myGearbox = gf.myGearbox
     'process the changes
     myGearbox.ChangeDimensions
     
@@ -49,8 +48,3 @@ Sub main()
 
 End Sub
 
-Private Sub SetDimVal(myDimension As Object, message As String)
-    value = InputBox(message)
-    numVal = CDbl(value)
-    myDimension.SystemValue = numVal * m2i 'value in meters
-End Sub

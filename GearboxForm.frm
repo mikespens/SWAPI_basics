@@ -20,11 +20,15 @@ Private Sub OKButton_Click()
 End Sub
 
 Private Sub txtBlueGearOD_Change()
+On Error GoTo CatchBlock
     myGearbox.blueGear = CDbl(txtBlueGearOD)
+CatchBlock:
 End Sub
 
 Private Sub txtBlueGearShaftDia_Change()
+On Error GoTo CatchBlock
     myGearbox.blueShaft = CDbl(txtBlueGearShaftDia)
+CatchBlock:
 End Sub
 
 Private Sub txtRedGearOD_Change()
